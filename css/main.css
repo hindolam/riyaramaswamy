@@ -29,26 +29,21 @@ header .title {
 header .subtitle {
   display: flex;
   justify-content: space-around;
-  align-items: center;
   font-size: 0.9rem;
-}
-
-.fa-star {
-  font-size: 0.45rem;
 }
 
 nav {
   grid-area: nav;
 
   display: flex;
-  justify-content:  center;
-  align-items: center;
+  justify-content: center;
 }
 
 nav a {
   margin: 20px;
   text-decoration: none;
 }
+
 main {
   grid-area: content;
   background-image: url("../img/cover.jpg");
