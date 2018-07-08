@@ -1,0 +1,85 @@
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.container {
+   display: grid;
+   grid-template-areas:
+    "header"
+    "nav"
+    "content"
+    "footer";
+    grid-template-rows: auto auto 1fr auto;
+    grid-gap: 15px;
+    height: 100vh;
+}
+
+header {
+  grid-area: header;
+  justify-self: center;
+  align-self: center;
+}
+
+header .title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 5px 0 5px 0;
+}
+
+header .subtitle {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.fa-star {
+  font-size: 0.45rem;
+}
+
+nav {
+  grid-area: nav;
+
+  display: flex;
+  justify-content:  center;
+  align-items: center;
+}
+
+nav a {
+  margin: 20px;
+  text-decoration: none;
+}
+main {
+  grid-area: content;
+  background-image: url("../img/cover.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+footer {
+  grid-area: footer;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "nav"
+      "content"
+      "side"
+      "footer";
+
+    grid-template-columns: 1fr;
+    grid-template-rows:
+      auto /* Header */
+      minmax(75px, auto) /* Nav */
+      1fr /* Content */
+      minmax(75px, auto) /* Sidebar */
+      auto; /* Footer */
+  }
+
+  nav, aside {
+    margin: 0;
+  }
+}
